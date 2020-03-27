@@ -106,3 +106,7 @@ venv.bak/
 prediction/model_Time.h5
 
 prediction/dataTag.csv
+.DS_Store
+.idea/
+.LICENSE
+.i1.png
