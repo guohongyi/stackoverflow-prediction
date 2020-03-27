@@ -13,16 +13,16 @@
 
 <body style="background: #000;">
  <div class="login">
-	<h1>Sales Forecasting</h1>
+	<h1>Stack Overflow Time and Tag Prediction</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="rate" placeholder="rate" required="required" />
-        <input type="text" name="sales in first month" placeholder="sales in first month" required="required" />
-		<input type="text" name="sales in second month" placeholder="sales in second month" required="required" />
+    	<input type="text" name="title" placeholder="Question Title" required="required" />
+        <input type="text" name="body" placeholder="Question Body" required="required" />
 
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict sales in third month</button>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Tags and Time</button>
     </form>
 
    <br>
