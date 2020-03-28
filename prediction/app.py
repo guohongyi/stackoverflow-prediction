@@ -18,6 +18,7 @@ from nltk.tokenize import ToktokTokenizer
 from nltk.stem.wordnet import WordNetLemmatizer
 
 import h5py
+import csv
 
 
 
@@ -47,6 +48,48 @@ data_tag['tags'] = data_tag['tags'].apply(ast.literal_eval)
 
 
 
+
+def read_csv(file_name, my_delim=',', my_quote='"'):
+    len_csv = 0
+    file_content = []
+    with open(file_name, 'rU') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=my_delim, quotechar=my_quote)
+        
+        counter = 0
+        for row in spamreader:
+            #print ', '.join(row)
+            if len_csv == 0:
+                len_csv = len(row)
+            elif len_csv != len(row):
+                print('[warning] row %i size not equal %i/%i' % (counter, len(row), len_csv))
+                print(', '.join(row))
+            
+            clean_row = []
+            for list_item in row:
+                if len(list_item) > 0 and list_item[-1] in [' ']:
+                    list_item = list_item[:-1]
+                if ',' in list_item:
+                    list_item=list_item.replace(',',' ')
+                #list_item=float(list_item)
+                clean_row.append(list_item)
+            file_content.append(clean_row)
+            counter += 1        
+        csv_np = np.array(file_content)    
+    #file_contnet_pd = pd.read_csv(file_path)
+    return csv_np
+
+def get_expert(predicted_tag,data_path='./dataExpert.csv'):
+    
+    experts = read_csv(data_path)
+    predicted_experts = np.empty([0])
+    for i1 in range(len(predicted_tag)):
+        idx = np.where(experts[:,0]==predicted_tag[i1])[0]
+        predicted_experts = np.append(predicted_experts,experts[idx,1:])
+    unique_experts, ind = np.unique(predicted_experts, return_inverse = True)
+    predicted_experts = ", ".join(unique_experts.tolist())
+    
+
+    return predicted_experts
 
 def strip_list_noempty(mylist):
     newlist = (item.strip() if hasattr(item, 'strip') else item for item in mylist)
@@ -157,14 +200,23 @@ def predict():
 
     print(source_time)
 
-    print(source_tag)
+    print(source_tag[0][0])
 
-#########
+    #########
+    
+    
+    predicted_tag = source_tag[0]
+    data_path = './dataExpert.csv'
 
-
+    predicted_experts = get_expert(predicted_tag, data_path)
+    print(predicted_experts)
     output = prediction_time
-
-    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag))
+    
+    # expert[source_tag[0][0]]
+    return render_template('index.html', 
+                           prediction_text='Time should be $ {}, Tag should be $ {}, \n recommended experts are {}'.format(
+                            source_time, source_tag, predicted_experts
+                            ))
 
 @app.route('/results',methods=['POST'])
 def results():
