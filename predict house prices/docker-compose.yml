@@ -1,9 +1,0 @@
-version: "1"
-
-services:
-  flask:
-    build : .
-    volumes : 
-     - ../scripts:/scripts
-    ports:
-     - 8080:8080
