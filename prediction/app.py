@@ -78,19 +78,30 @@ def read_csv(file_name, my_delim=',', my_quote='"'):
     #file_contnet_pd = pd.read_csv(file_path)
     return csv_np
 
-def get_expert(predicted_tag,data_expert='./dataExpert.csv',data_expert_id='./dataExpertID.csv'):    
-    experts = read_csv(data_expert)
+
+
+def get_expert(predicted_tag,data_expert_id='./dataExpertID.csv', id_name='./expert_id_name.csv'):   
+    id_name_csv = read_csv(id_name)
     experts_id = read_csv(data_expert_id)
     predicted_expert = np.empty([0])
     predicted_id = np.empty([0])
+    # function for finding name from id
+    def idToName(id):
+        for row in id_name_csv:
+            if row[0] == id:
+                return row[1]
+        return "noname"
     for i1 in range(len(predicted_tag)):
-        idx = np.where(experts[:,0]==predicted_tag[i1])[0]
-        predicted_expert = np.append(predicted_expert,experts[idx,1:])
+        idx = np.where(experts_id[:,0]==predicted_tag[i1])[0]
         predicted_id = np.append(predicted_id,experts_id[idx,1:])
-    unique_expert, ind = np.unique(predicted_expert, return_inverse = True)
+    print(predicted_id)
+
     unique_id, ind = np.unique(predicted_id, return_inverse = True)
-    predicted_expert = ", ".join(unique_expert.tolist())
+    #map names from ids
+    unique_expert = list(map(idToName, unique_id))
     predicted_id = ", ".join(unique_id.tolist())  
+    predicted_expert = ", ".join(unique_expert) #unique_expert already a list
+    
     return predicted_expert, predicted_id
 
 def strip_list_noempty(mylist):
@@ -212,7 +223,7 @@ def predict():
     
     
     predicted_tag = source_tag[0]
-    data_path = './dataExpert.csv'
+    data_path = './dataExpertID.csv'
 
     predicted_experts,expert_ids = get_expert(predicted_tag, data_path)
     print(predicted_experts)
