@@ -78,18 +78,20 @@ def read_csv(file_name, my_delim=',', my_quote='"'):
     #file_contnet_pd = pd.read_csv(file_path)
     return csv_np
 
-def get_expert(predicted_tag,data_path='./dataExpert.csv'):
-    
-    experts = read_csv(data_path)
-    predicted_experts = np.empty([0])
+def get_expert(predicted_tag,data_expert='./dataExpert.csv',data_expert_id='./dataExpertID.csv'):    
+    experts = read_csv(data_expert)
+    experts_id = read_csv(data_expert_id)
+    predicted_expert = np.empty([0])
+    predicted_id = np.empty([0])
     for i1 in range(len(predicted_tag)):
         idx = np.where(experts[:,0]==predicted_tag[i1])[0]
-        predicted_experts = np.append(predicted_experts,experts[idx,1:])
-    unique_experts, ind = np.unique(predicted_experts, return_inverse = True)
-    predicted_experts = ", ".join(unique_experts.tolist())
-    
-
-    return predicted_experts
+        predicted_expert = np.append(predicted_expert,experts[idx,1:])
+        predicted_id = np.append(predicted_id,experts_id[idx,1:])
+    unique_expert, ind = np.unique(predicted_expert, return_inverse = True)
+    unique_id, ind = np.unique(predicted_id, return_inverse = True)
+    predicted_expert = ", ".join(unique_expert.tolist())
+    predicted_id = ", ".join(unique_id.tolist())  
+    return predicted_expert, predicted_id
 
 def strip_list_noempty(mylist):
     newlist = (item.strip() if hasattr(item, 'strip') else item for item in mylist)
@@ -208,14 +210,15 @@ def predict():
     predicted_tag = source_tag[0]
     data_path = './dataExpert.csv'
 
-    predicted_experts = get_expert(predicted_tag, data_path)
+    predicted_experts,expert_ids = get_expert(predicted_tag, data_path)
     print(predicted_experts)
+    print(expert_ids)
     output = prediction_time
     
     # expert[source_tag[0][0]]
     return render_template('index.html', 
-                           prediction_text='Time should be $ {}, Tag should be $ {}, \n recommended experts are {}'.format(
-                            source_time, source_tag, predicted_experts
+                           prediction_text='Time should be $ {}, Tag should be $ {}, Recommended experts are {}, their IDs are {}'.format(
+                               source_time, source_tag, predicted_experts, expert_ids
                             ))
 
 @app.route('/results',methods=['POST'])
