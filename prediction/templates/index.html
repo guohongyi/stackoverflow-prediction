@@ -2,32 +2,102 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Deployment Tutorial 1</title>
+  <title>Stack Overflow Time and Tag Prediction</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/icon type">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/primary.css') }}">
+<style>
+.login { 
+	position: absolute;
+	top: 40%;
+	left: 30%;
+	margin: -150px 0 0 -150px;
+	width:1000px;
+	height:800px;
+}
+body { 
+	background-color: #F0F0F0;
+}
+.bgimage { 
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	z-index: -1;
+}
+</style>
+  
   
 </head>
 
-<body style="background: #000;">
+<body class="ask-page unified-theme js-ask-page-v2 floating-content">
  <div class="login">
-	<h1>Stack Overflow Time and Tag Prediction</h1>
-
+	<div class="grid ai-center py24 bg-no-repeat bg-right-bottom wide:bg-image-ask-v2 wide:h-ask-v2-background">
+	<div class="fs-headline1">
+            Stack Overflow Time and Tag Prediction
+        </div>
+	</div>
+	
+	<div class="bgimage">
+	<img src="{{ url_for('static', filename='img/bg.png') }}" > 
+	</div>
+	
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="title" placeholder="Question Title" required="required" />
-        <input type="text" name="body" placeholder="Question Body" required="required" />
+	    <div class="bg-white bar-sm bs-md p16 ba bc-black-3">
+		   <div class="fs-title">
+            Question
+    </div>
+	<br>
+            <div id="post-title" class="ps-relative mb16">
+                        <label class="d-block s-label mb4" for="title">
+                                Title
+                                <p class="s-description mt2">Be specific and imagine you’re asking a question to another person</p>
+                        </label>
+						<div class="fl1 ps-relative">
+    	    <input type="text" name="title" placeholder="Question Title" class="s-input js-post-title-field" required="required" />
+			</div>
+	   </div>
+	
+	
+	<label class="s-label mb4 d-block" for="wmd-input">
+                Body
 
+                    <p class="s-description mt2">Include all the information someone would need to answer your question</p>
+            </label>
+	
+	<div class="ps-relative">
+                    <textarea id="wmd-input" name="body" class="wmd-input s-input bar0 js-post-body-field processed" data-post-type-id="1" cols="92" rows="15" tabindex="101" data-min-length="" ></textarea>
+                <div class="grippie bbr-sm" style="margin-right: 0px;"></div></div>
+	
+	</div>
+	
+	
+		<div class="grid gsx gs4 ai-center mt32">
 
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Tags and Time</button>
+        <button type="submit" class="grid--cell s-btn s-btn__primary s-btn__icon ws-nowrap js-begin-review-button js-gps-track">Predict Tags and Time</button>
+		</div>
     </form>
 
-   <br>
-   <br>
-   {{ prediction_text }}
+	<br>
+	<br>
+   <div class="bg-white bar-sm bs-md p16 ba bc-black-3">
+   <div class="fs-title">
+            Prediction
+    </div>
+	<br>
+		<div class="fs-body3">Time:
+		<span class="fs-body2">
+			{{ prediction_time }}
+		</span></div>
+		<div class="fs-body3">Tags:
+		<span class="fs-body2">
+			{{ prediction_tag }}
+		</span></div>
+   </div>
 
  </div>
 

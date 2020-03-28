@@ -77,6 +77,10 @@ def lemmatizeWords(text):
         x = lemma.lemmatize(w, pos="v")
         listLemma.append(x.lower())
     return ' '.join(map(str, listLemma))
+	
+	
+def toCsvString(arr):
+    return ', '.join(arr)
 
 @app.route('/')
 def home():
@@ -164,7 +168,7 @@ def predict():
 
     output = prediction_time
 
-    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag))
+    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag), prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]))
 
 @app.route('/results',methods=['POST'])
 def results():
