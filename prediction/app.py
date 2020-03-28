@@ -122,6 +122,10 @@ def lemmatizeWords(text):
         x = lemma.lemmatize(w, pos="v")
         listLemma.append(x.lower())
     return ' '.join(map(str, listLemma))
+	
+	
+def toCsvString(arr):
+    return ', '.join(arr)
 
 @app.route('/')
 def home():
@@ -214,12 +218,11 @@ def predict():
     print(predicted_experts)
     print(expert_ids)
     output = prediction_time
-    
-    # expert[source_tag[0][0]]
-    return render_template('index.html', 
-                           prediction_text='Time should be $ {}, Tag should be $ {}, Recommended experts are {}, their IDs are {}'.format(
-                               source_time, source_tag, predicted_experts, expert_ids
-                            ))
+
+
+    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag), prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]), prediction_experts=predicted_experts, prediction_ids=expert_ids)
+
+
 
 @app.route('/results',methods=['POST'])
 def results():
