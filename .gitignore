@@ -112,3 +112,5 @@ prediction/dataTag.csv
 .idea/
 .LICENSE
 .i1.png
+prediction/static/images/radar.png
+prediction/static/images/time_pie.png
