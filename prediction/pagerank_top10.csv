@@ -123,11 +123,11 @@ answerer_id,answerer_name,tag_name,correct_count,all_count,correct_percentage
 2901002,jezrael,python,2079,2763,75.24429967
 2901002,jezrael,r,1,2,50
 2901002,jezrael,html,1,1,100
-1531124,GhostCat says Reinstate Monica,c#,2,2,100
-1531124,GhostCat says Reinstate Monica,python,3,3,100
-1531124,GhostCat says Reinstate Monica,java,232,569,40.77328647
-1531124,GhostCat says Reinstate Monica,android,13,29,44.82758621
-1531124,GhostCat says Reinstate Monica,arrays,7,20,35
+1531124,GhostCat,c#,2,2,100
+1531124,GhostCat,python,3,3,100
+1531124,GhostCat,java,232,569,40.77328647
+1531124,GhostCat,android,13,29,44.82758621
+1531124,GhostCat,arrays,7,20,35
 9515207,CertainPerformance,node.js,83,122,68.03278689
 9515207,CertainPerformance,jquery,91,164,55.48780488
 9515207,CertainPerformance,ruby-on-rails,1,1,100

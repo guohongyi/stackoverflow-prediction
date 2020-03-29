@@ -209,7 +209,7 @@ def radar(unique_id, tags=np.array(['python','java','c','c++','javascript','r','
     # Draw ylabels
     ax.set_rlabel_position(0)
     tick = math.ceil(np.amax(pagerank2)/4)
-    plt.yticks([0,tick,tick*2,tick*3], ["0","25","50","75"], color="grey", size=7)
+    plt.yticks([0,tick,tick*2,tick*3], ["0",str(tick),str(tick*2),str(tick*3)], color="grey", size=7)
     plt.ylim(-tick,tick*4)
     colors=['b','r','g','c','m','y','k','b','r','g','c','m','y','k']
     for i5 in range(pagerank2.shape[0]):
@@ -222,6 +222,7 @@ def radar(unique_id, tags=np.array(['python','java','c','c++','javascript','r','
     # Add legend
     plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
     plt.savefig('./static/images/radar.png')
+    plt.close()
     return
 
 def show_pie(prob):
@@ -250,7 +251,7 @@ def show_pie(prob):
 #            shadow=True, startangle=90)
 #    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.savefig('./static/images/time_pie.png')
-    
+    plt.close()
     return
 
 @app.route('/')
