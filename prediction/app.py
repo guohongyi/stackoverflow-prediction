@@ -343,7 +343,7 @@ def predict():
     output = prediction_time
 	
 
-    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag), prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]), prediction_experts=predicted_experts, prediction_ids=expert_ids, prediction=1)
+    return render_template('index.html', prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]), prediction_experts=predicted_experts, prediction_ids=expert_ids, prediction=1)
 
 def get_tag_image(predicted_tag):
     if len(predicted_tag) == 1:

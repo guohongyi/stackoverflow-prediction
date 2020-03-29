@@ -115,8 +115,19 @@
                                                             htmlString += ", ";
                                                         }
                                                     }
-
                                                     document.getElementById("experts").innerHTML = htmlString;
+                                                    
+                                                    prediction_tag = makeList("{{ prediction_tag }}");
+                                                    
+                                                    tagHtmlString = ""
+                                                    for (i=0; i<prediction_tag.length;i++){
+                                                        tagHtmlString = tagHtmlString + '<span class="post-tag">'+prediction_tag[i]+"</span>";
+                                                        if(i < prediction_tag.length-1){
+                                                            tagHtmlString += ", ";
+                                                        }
+                                                    }
+                                                    
+                                                    document.getElementById("tags").innerHTML = tagHtmlString;
 
                                                 }else{
 
@@ -217,9 +228,9 @@
                         </div>
                         <br>
 
-                            <div class="fs-body3">
+                            <div class="fs-body3" id="tags">
 
-                                {{ prediction_tag }}
+                                
 
 
 
