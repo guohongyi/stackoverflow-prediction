@@ -1,0 +1,57 @@
+I wrote a code to run a simple applet. I use java 8. the file name is SampleApplets.java. Every time when 
+ I run this code in cmd prompt, the applet starts and showing a message: 'Start: applet not initialized' in the bottom of the applet.
+
+And also I changed the comment which is present on the following code to these formats also
+
+
+> code="SampleApplets.SampleApplets" width=300 height=300> 
+
+ 
+
+
+AND
+
+> code="SampleApplets.class" width=300 height=300> 
+
+
+AND
+
+ >code="SampleApplets.SampleApplets" width="300" height="300"> 
+
+
+AND
+
+ >code="SampleApplets.class" width="300" height="300"> 
+
+AND 
+
+>code="SampleApplets" width=300 height=300>
+
+**The Src code starts here**
+
+    package myPkg;
+
+import java.applet.Applet;  
+import java.awt.Graphics; 
+
+the comment goes here... see the photo for clarity[enter image description here][1]
+
+public class SampleApplets extends Applet {
+
+	
+	public void paint(Graphics g){  
+		g.drawString("My Simple Applet",150,150);  
+		}
+	
+}
+
+
+
+[enter image description here][2]
+
+
+  [1]: https://i.stack.imgur.com/leu17.png
+  [2]: https://i.stack.imgur.com/qKpsy.png
+
+
+but still running perfectly on eclipse.. Please help me to get out of this issue...please

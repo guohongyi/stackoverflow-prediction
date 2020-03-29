@@ -16,6 +16,27 @@
 
                                         </style>
                                         <script>
+                                        function httpGet(theUrl, callBack)
+                                        {
+                                            if (window.XMLHttpRequest)
+                                            {// code for IE7+, Firefox, Chrome, Opera, Safari
+                                                xmlhttp=new XMLHttpRequest();
+                                            }
+                                            else
+                                            {// code for IE6, IE5
+                                                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                                            }
+                                            xmlhttp.onreadystatechange=function()
+                                            {
+                                                if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                                                {
+                                                    //return xmlhttp.responseText;
+                                                    callBack(xmlhttp.responseText);
+                                                }
+                                            }
+                                            xmlhttp.open("GET", theUrl, false );
+                                            xmlhttp.send();    
+                                        }
                                             function fillTitle(str){
                                                 document.getElementById("title").value = str;
                                             }
@@ -24,17 +45,15 @@
                                             }
                                             function q1(){
                                                 fillTitle("Connect to MySQL db from Jupyter notebook");
-                                                fillBody("I am using Jupyter Notebooks to learn Python. I would like to connect to a MySQL db hosted locally hosted through MAMP. How would I approach this?");
+                                                httpGet("{{ url_for('static', filename='questions/question1.txt') }}", fillBody);
                                             }
                                             function q2(){
                                                 fillTitle("How do i style a span to look like a link without using javascript?");
-                                                fillBody('For my website i\'ll need to use <span> instead of <a> because i\'m using mostly ajax and thus instead of links i have onclick ajax events as attributes in my spans. \
-                                                    As a result, i\'ve had to manually style the spans to look like links. I\'ve used hover and visited pseudo classes to change background and text colour, but to change the mouse default to a pointer finger on hover, will i need to use javascript? Or can i do that using css?\
-                                                    Also, i\'ve just realized...couldnt i just use the <a> tag anyways instead of <span>, but just instead of an href, i would include an onclick? It should work just the same, no?');
+                                                httpGet("{{ url_for('static', filename='questions/question2.txt') }}", fillBody);
                                             }
                                             function q3(){
-                                                fillTitle("Symfony2: how to get all entities of one type which are marked with “EDIT” ACL permission?");
-                                                fillBody('Can someone tell me how to get all entities of one type which are marked with "EDIT" ACL permission? I would like to build a query with the Doctrine EntityManager.');
+                                                fillTitle("How to make this applet code run correctly?");
+                                                httpGet("{{ url_for('static', filename='questions/question3.txt') }}", fillBody);
                                             }
 
                                             function makeList(strlist){
@@ -166,7 +185,7 @@
                                     </div>
                                     <div class="fs-body2 p8" onclick="q3()">
                                         <span class="link">Question 3</span>
-                                        <span><a href="https://stackoverflow.com/questions/6201279/symfony2-how-to-get-all-entities-of-one-type-which-are-marked-with-edit-acl-p">link</a></span>
+                                        <span><a href="https://stackoverflow.com/questions/60911342/how-to-make-this-applet-code-run-correctly">link</a></span>
                                     </div>
                                 </div>
                             </div>
