@@ -8,53 +8,12 @@
                     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
                         <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
                             <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-                                <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+                                
+                                <link rel="stylesheet" href="{{ url_for('static', filename='css/stacks.css') }}">
                                     <link rel="stylesheet" href="{{ url_for('static', filename='css/primary.css') }}">
+                                    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
                                         <style>
-                                            .login { 
-                                            position: absolute;
-                                            top: 25%;
-                                            left: 30%;
-                                            margin: -150px 0 0 -150px;
-                                            width:1000px;
-                                            height:800px;
-                                            }
-                                            body { 
-                                            background-color: #F0F0F0;
-                                            }
-                                            .bgimage { 
-                                            position: absolute;
-                                            top: 0%;
-                                            left: 50%;
-                                            z-index: -1;
-                                            }
-                                            .left-side{
-                                            float:left;
 
-                                            }
-                                            .right-side{
-                                            float:right;
-
-                                            }
-                                            .bar-sm{
-                                            width:800px
-                                            }
-                                            .bar-md{
-                                            width:1000px
-                                            }
-                                            .link{
-                                            cursor:pointer;
-                                            text-decoration:underline;
-                                            }
-                                            .small-figure{
-                                            width:500px;
-                                            height:500px;
-                                            }
-                                            .figure{
-                                            width:100%
-                                            }
-                                            .long{
-                                            width:1000px}
                                         </style>
                                         <script>
                                             function fillTitle(str){
@@ -222,7 +181,11 @@
                         </div>
                     </form>
 
-                    <div class="bg-white bar-md bs-md p16 ba bc-black-3 left-side prediction">
+
+
+<div class="grid-container left-side long prediction">
+
+                    <div class="bg-white bar-md bs-md p16 ba bc-black-3 grid-item-long left-side grid-item-row-1">
                         <div class="fs-title">
                             Tags
                         </div>
@@ -237,7 +200,7 @@
                             </div>
                         </div>
 
-                        <div class="bg-white bar-sm bs-md p16 ba bc-black-3 left-side small-figure prediction">
+                        <div class="bg-white bar-sm bs-md p16 ba bc-black-3 grid-item-small small-figure grid-item-row-2">
                             <div class="fs-title">
                                 Experts
                             </div>
@@ -255,7 +218,7 @@
                                 </div>
 
 
-                                <div class="bg-white bar-sm bs-md p16 ba bc-black-3 right-side small-figure prediction">
+                                <div class="bg-white bar-sm bs-md p16 ba bc-black-3 grid-item-small small-figure grid-item-row-2">
                                     <div class="fs-title">
                                         Time
                                     </div>
@@ -273,7 +236,7 @@
 
                                         </div>
 
-
+</div>
                                     </div>
 
 
