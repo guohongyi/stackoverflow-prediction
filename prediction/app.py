@@ -221,7 +221,7 @@ def radar(unique_id, tags=np.array(['python','java','c','c++','javascript','r','
         ax.fill(angles, values, colors[i5], alpha=0.1)    
     # Add legend
     plt.legend(loc='upper right', bbox_to_anchor=(0.1, 0.1))
-    plt.savefig('./images/radar.png')
+    plt.savefig('./static/images/radar.png')
     return
 
 def show_pie(prob):
@@ -241,7 +241,7 @@ def show_pie(prob):
     ax1.pie(prob*100, explode=explode, labels=keys, autopct='%1.1f%%',
             shadow=True, startangle=90)
     ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-    plt.savefig('./images/time_pie.png')
+    plt.savefig('./static/images/time_pie.png')
     
     return
 
@@ -343,7 +343,7 @@ def predict():
     output = prediction_time
 	
 
-    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag), prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]), prediction_experts=predicted_experts, prediction_ids=expert_ids)
+    return render_template('index.html', prediction_text='Time should be $ {}, Tag should be $ {}'.format(source_time, source_tag), prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]), prediction_experts=predicted_experts, prediction_ids=expert_ids, prediction=1)
 
 def get_tag_image(predicted_tag):
     if len(predicted_tag) == 1:
@@ -351,7 +351,7 @@ def get_tag_image(predicted_tag):
     if type(predicted_tag) == str:
         predicted_tag = [predicted_tag]
 		
-    img_path = './images'
+    img_path = './static/images'
     tag_images = []
     for tag in predicted_tag:
         tag_images.append(os.path.join(img_path, tag + '.png'))
