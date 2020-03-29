@@ -1,0 +1,186 @@
+answerer_id,answerer_name,tag_name,correct_count,all_count,correct_percentage
+6309,VonC,android,2,155,1.290322581
+6309,VonC,c,2,46,4.347826087
+6309,VonC,css,2,38,5.263157895
+6309,VonC,html,3,64,4.6875
+6309,VonC,ios,3,46,6.52173913
+6309,VonC,java,13,1084,1.199261993
+6309,VonC,javascript,7,100,7
+6309,VonC,node.js,5,116,4.310344828
+6309,VonC,php,1,157,0.636942675
+6309,VonC,python,11,191,5.759162304
+6309,VonC,r,3,21,14.28571429
+6309,VonC,ruby-on-rails,2,120,1.666666667
+22656,Jon Skeet,.net,33,5510,0.598911071
+22656,Jon Skeet,android,2,678,0.294985251
+22656,Jon Skeet,arrays,4,874,0.457665904
+22656,Jon Skeet,asp.net,4,1145,0.349344978
+22656,Jon Skeet,c#,172,19342,0.88925654
+22656,Jon Skeet,c++,1,143,0.699300699
+22656,Jon Skeet,java,50,10449,0.47851469
+22656,Jon Skeet,mysql,1,214,0.46728972
+22656,Jon Skeet,sql,1,427,0.234192037
+100297,Martijn Pieters,arrays,4,96,4.166666667
+100297,Martijn Pieters,c++,3,13,23.07692308
+100297,Martijn Pieters,html,1,177,0.564971751
+100297,Martijn Pieters,php,1,28,3.571428571
+100297,Martijn Pieters,python,403,18883,2.134194778
+100297,Martijn Pieters,sql,4,107,3.738317757
+115145,CommonsWare,android,416,21502,1.934703748
+115145,CommonsWare,arrays,1,40,2.5
+115145,CommonsWare,html,2,100,2
+115145,CommonsWare,java,98,3356,2.920143027
+115145,CommonsWare,javascript,2,79,2.53164557
+115145,CommonsWare,sql,2,41,4.87804878
+548225,anubhava,arrays,4,287,1.393728223
+548225,anubhava,html,4,232,1.724137931
+548225,anubhava,java,21,1612,1.302729529
+548225,anubhava,javascript,25,1245,2.008032129
+548225,anubhava,mysql,1,117,0.854700855
+548225,anubhava,node.js,1,19,5.263157895
+548225,anubhava,php,47,4216,1.114800759
+548225,anubhava,python,39,378,10.31746032
+548225,anubhava,r,1,16,6.25
+992484,MadProgrammer,arrays,2,224,0.892857143
+992484,MadProgrammer,ios,6,41,14.63414634
+992484,MadProgrammer,java,75,10240,0.732421875
+992484,MadProgrammer,mysql,1,89,1.123595506
+1144035,Gordon Linoff,.net,3,61,4.918032787
+1144035,Gordon Linoff,android,4,89,4.494382022
+1144035,Gordon Linoff,arrays,7,90,7.777777778
+1144035,Gordon Linoff,asp.net,4,137,2.919708029
+1144035,Gordon Linoff,c#,25,433,5.773672055
+1144035,Gordon Linoff,html,1,50,2
+1144035,Gordon Linoff,java,10,283,3.533568905
+1144035,Gordon Linoff,javascript,3,28,10.71428571
+1144035,Gordon Linoff,jquery,2,33,6.060606061
+1144035,Gordon Linoff,mysql,881,20384,4.322017268
+1144035,Gordon Linoff,node.js,1,54,1.851851852
+1144035,Gordon Linoff,php,57,3259,1.749002762
+1144035,Gordon Linoff,python,28,209,13.39712919
+1144035,Gordon Linoff,r,6,60,10
+1144035,Gordon Linoff,ruby-on-rails,7,80,8.75
+1144035,Gordon Linoff,sql,4040,53551,7.544210192
+1491895,Barmar,.net,1,7,14.28571429
+1491895,Barmar,arrays,94,1616,5.816831683
+1491895,Barmar,c,107,1275,8.392156863
+1491895,Barmar,c++,5,611,0.818330606
+1491895,Barmar,css,22,452,4.867256637
+1491895,Barmar,html,108,1955,5.524296675
+1491895,Barmar,javascript,370,5881,6.291447033
+1491895,Barmar,jquery,150,3779,3.969304049
+1491895,Barmar,mysql,277,5048,5.487321712
+1491895,Barmar,node.js,19,78,24.35897436
+1491895,Barmar,php,336,6403,5.247540216
+1491895,Barmar,python,243,1313,18.50723534
+1491895,Barmar,ruby-on-rails,4,26,15.38461538
+1491895,Barmar,sql,104,1636,6.356968215
+177053,Vasfed,ruby-on-rails,81,163,49.69325153
+177053,Vasfed,javascript,5,8,62.5
+177053,Vasfed,css,3,4,75
+177053,Vasfed,arrays,1,1,100
+177053,Vasfed,jquery,1,3,33.33333333
+177053,Vasfed,html,1,1,100
+177053,Vasfed,mysql,3,4,75
+5820010,Sh_Khan,arrays,33,59,55.93220339
+5820010,Sh_Khan,ios,333,598,55.68561873
+519413,Rory McCrossan,sql,1,2,50
+519413,Rory McCrossan,php,13,28,46.42857143
+519413,Rory McCrossan,asp.net,2,4,50
+519413,Rory McCrossan,c#,2,5,40
+519413,Rory McCrossan,arrays,4,9,44.44444444
+519413,Rory McCrossan,html,117,181,64.64088398
+519413,Rory McCrossan,python,1,1,100
+519413,Rory McCrossan,javascript,228,354,64.40677966
+519413,Rory McCrossan,ruby-on-rails,1,1,100
+519413,Rory McCrossan,css,41,67,61.19402985
+519413,Rory McCrossan,java,1,1,100
+519413,Rory McCrossan,mysql,1,1,100
+519413,Rory McCrossan,node.js,2,2,100
+519413,Rory McCrossan,jquery,402,605,66.44628099
+7252182,mm8,sql,2,3,66.66666667
+7252182,mm8,.net,23,36,63.88888889
+7252182,mm8,c#,390,577,67.59098787
+5836671,VDWWD,asp.net,66,127,51.96850394
+5836671,VDWWD,jquery,4,12,33.33333333
+5836671,VDWWD,html,9,16,56.25
+5836671,VDWWD,c#,38,73,52.05479452
+5836671,VDWWD,css,6,7,85.71428571
+5836671,VDWWD,javascript,6,16,37.5
+3732271,akrun,r,1497,2954,50.67704807
+3732271,akrun,arrays,3,7,42.85714286
+3732271,akrun,sql,1,2,50
+3732271,akrun,mysql,1,1,100
+3732271,akrun,python,4,9,44.44444444
+816620,jfriend00,javascript,95,144,65.97222222
+816620,jfriend00,arrays,2,2,100
+816620,jfriend00,android,1,1,100
+816620,jfriend00,python,3,3,100
+816620,jfriend00,node.js,140,226,61.94690265
+816620,jfriend00,mysql,3,5,60
+816620,jfriend00,c#,2,2,100
+2901002,jezrael,arrays,7,9,77.77777778
+2901002,jezrael,python,2079,2763,75.24429967
+2901002,jezrael,r,1,2,50
+2901002,jezrael,html,1,1,100
+1531124,GhostCat says Reinstate Monica,c#,2,2,100
+1531124,GhostCat says Reinstate Monica,python,3,3,100
+1531124,GhostCat says Reinstate Monica,java,232,569,40.77328647
+1531124,GhostCat says Reinstate Monica,android,13,29,44.82758621
+1531124,GhostCat says Reinstate Monica,arrays,7,20,35
+9515207,CertainPerformance,node.js,83,122,68.03278689
+9515207,CertainPerformance,jquery,91,164,55.48780488
+9515207,CertainPerformance,ruby-on-rails,1,1,100
+9515207,CertainPerformance,css,16,25,64
+9515207,CertainPerformance,arrays,136,236,57.62711864
+9515207,CertainPerformance,javascript,862,1432,60.19553073
+9515207,CertainPerformance,c#,1,2,50
+9515207,CertainPerformance,html,91,152,59.86842105
+9515207,CertainPerformance,python,15,21,71.42857143
+9515207,CertainPerformance,java,1,5,20
+9515207,CertainPerformance,php,6,7,85.71428571
+8620333,Temani Afif,javascript,71,116,61.20689655
+8620333,Temani Afif,jquery,23,37,62.16216216
+8620333,Temani Afif,html,435,706,61.61473088
+8620333,Temani Afif,python,1,1,100
+8620333,Temani Afif,css,733,1167,62.81062554
+8620333,Temani Afif,c#,1,1,100
+8620333,Temani Afif,android,1,1,100
+2458991,bruno,c++,119,232,51.29310345
+2458991,bruno,c,287,541,53.04990758
+2458991,bruno,java,4,9,44.44444444
+2458991,bruno,c#,1,3,33.33333333
+2458991,bruno,arrays,36,67,53.73134328
+2458991,bruno,python,1,2,50
+2458991,bruno,android,1,1,100
+2079303,eerorika,c++,313,777,40.28314028
+2079303,eerorika,arrays,17,34,50
+2079303,eerorika,c,21,50,42
+3730754,LoicTheAztec,javascript,12,14,85.71428571
+3730754,LoicTheAztec,mysql,6,8,75
+3730754,LoicTheAztec,css,3,4,75
+3730754,LoicTheAztec,jquery,32,44,72.72727273
+3730754,LoicTheAztec,html,9,9,100
+3730754,LoicTheAztec,arrays,2,3,66.66666667
+3730754,LoicTheAztec,php,456,590,77.28813559
+3730754,LoicTheAztec,sql,14,17,82.35294118
+1447675,Nina Scholz,node.js,24,61,39.3442623
+1447675,Nina Scholz,sql,2,4,50
+1447675,Nina Scholz,html,13,35,37.14285714
+1447675,Nina Scholz,c,1,1,100
+1447675,Nina Scholz,jquery,29,62,46.77419355
+1447675,Nina Scholz,java,3,4,75
+1447675,Nina Scholz,.net,1,1,100
+1447675,Nina Scholz,python,4,9,44.44444444
+1447675,Nina Scholz,c#,1,2,50
+1447675,Nina Scholz,mysql,2,4,50
+1447675,Nina Scholz,arrays,261,701,37.23252496
+1447675,Nina Scholz,javascript,690,1814,38.03748622
+1447675,Nina Scholz,css,3,3,100
+3110834,Reza Aghaei,css,1,1,100
+3110834,Reza Aghaei,c#,84,125,67.2
+3110834,Reza Aghaei,.net,52,74,70.27027027
+3110834,Reza Aghaei,jquery,1,1,100
+3110834,Reza Aghaei,c++,1,1,100
+3110834,Reza Aghaei,javascript,1,1,100
+3110834,Reza Aghaei,html,1,1,100
