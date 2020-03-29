@@ -232,15 +232,23 @@ def show_pie(prob):
     new_order = [0,2,3,4,1,5]
     
     keys = np.array(keys)[new_order]
-    prob = np.array(prob)[new_order]
+    prob = np.array(prob)[new_order]*100
     
-    explode = [0, 0, 0, 0, 0, 0]  # only "explode" the 2nd slice (i.e. 'Hogs')
-    explode[prob.argmax()] = 0.1
     
-    fig1, ax1 = plt.subplots()
-    ax1.pie(prob*100, explode=explode, labels=keys, autopct='%1.1f%%',
-            shadow=True, startangle=90)
-    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    #plt.bar(keys, prob)
+    plt.bar(keys[0], prob[0],color=[255/255,185/255,53/255])
+    plt.bar(keys[1:], prob[1:],color=[255/255,206/255,117/255])
+    plt.xlabel('Time (hours)')
+    plt.ylabel('Probability of Answer (%)')
+#    plt.savefig('./output/time.png')
+    
+#    explode = [0, 0, 0, 0, 0, 0]  # only "explode" the 2nd slice (i.e. 'Hogs')
+#    explode[prob.argmax()] = 0.1
+#    
+#    fig1, ax1 = plt.subplots()
+#    ax1.pie(prob*100, explode=explode, labels=keys, autopct='%1.1f%%',
+#            shadow=True, startangle=90)
+#    ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
     plt.savefig('./static/images/time_pie.png')
     
     return
