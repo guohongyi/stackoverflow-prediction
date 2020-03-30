@@ -237,8 +237,13 @@ def show_pie(prob):
     
     
     #plt.bar(keys, prob)
-    plt.bar(keys[0], prob[0],color=[255/255,185/255,53/255])
-    plt.bar(keys[1:], prob[1:],color=[255/255,206/255,117/255])
+    idx = prob.argmax()
+    print(idx)
+    zeros = np.zeros(prob.shape)
+    zeros[idx] = prob[idx]
+    prob[idx]=0
+    plt.bar(keys, zeros,color=[255/255,185/255,53/255])
+    plt.bar(keys, prob,color=[255/255,206/255,117/255])
     plt.xlabel('Time (hours)')
     plt.ylabel('Probability of Answer (%)')
 #    plt.savefig('./output/time.png')
@@ -338,17 +343,19 @@ def predict():
 
     #########
     
-    
-    predicted_tag = source_tag[0]
-    predicted_expert, predicted_id, unique_id = get_expert(predicted_tag)
-    radar(unique_id) #---------------------------- generate radar plot
-    
     data_path = './dataExpertID.csv'
-
+    predicted_tag = source_tag[0]
+    #predicted_expert, predicted_id, unique_id = get_expert(predicted_tag)
     predicted_experts,expert_ids,unique_id = get_expert(predicted_tag, data_path)
     print(predicted_experts)
     print(predicted_tag)
     print(get_tag_image(predicted_tag))
+    if len(unique_id) == 0:
+        predicted_expert, predicted_id, unique_id = get_expert(['python'])
+    radar(unique_id) #---------------------------- generate radar plot
+    
+    
+    
     output = prediction_time
 	
 
