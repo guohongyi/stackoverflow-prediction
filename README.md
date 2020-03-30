@@ -18,7 +18,7 @@ Stackoverflow end to end projects from data collection to putting models into pr
 
 Download files from dropbox 
 
-`pip install scikit-learn pandas numpy flask`
+`pip install scikit-learn pandas numpy flask tensorflow BeautifulSoup4 nltk`
 
 `python model.py`
 

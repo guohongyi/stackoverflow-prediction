@@ -1,0 +1,1 @@
+I am using Jupyter Notebooks to learn Python. I would like to connect to a MySQL db hosted locally hosted through MAMP. How would I approach this?

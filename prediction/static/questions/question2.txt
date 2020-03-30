@@ -1,0 +1,5 @@
+For my website i'll need to use `<span>` instead of `<a>` because i'm using mostly ajax and thus instead of links i have onclick ajax events as attributes in my spans.
+
+As a result, i've had to manually style the spans to look like links. I've used hover and visited pseudo classes to change background and text colour, but to change the mouse default to a pointer finger on hover, will i need to use javascript? Or can i do that using css?
+
+Also, i've just realized...couldnt i just use the `<a>` tag anyways instead of `<span>`, but just instead of an href, i would include an onclick? It should work just the same, no?
