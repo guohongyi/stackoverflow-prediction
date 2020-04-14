@@ -1,22 +1,30 @@
 # STACKOVERFLOW
 This project is a term project for EECS6414 Data Analytics and Visualization Winter 2020, York University
+
 Team members: 
-Jasmeet Kaur
-Xue Teng
-Hongyi Guo
 
-End to end projects from data collection to putting models into production using flask, docker etc.
+* Jasmeet Kaur
+* Xue Teng
+* Hongyi Guo
 
-# 1. Predict Time
-# 2. Predictt Tags
+This project is end-to-end from data collection to putting models into production using flask, docker etc.
 
+## Features:
+- Time Prediction
+- Tags Prediction
+- Experts Prediction
+
+## Dataset:
+- Stackoverflow Dataset on Kaggle
+(https://www.kaggle.com/stackoverflow/stackoverflow)
 
 ## Environment and tools
-1. scikit-learn
-2. pandas
-3. numpy
-4. flask
-5. tensorflow
+- scikit-learn
+- pandas
+- numpy
+- flask
+- tensorflow
+- other supporting tools/libraries
 
 ## Installation
 
