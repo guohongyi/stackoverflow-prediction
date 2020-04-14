@@ -1,7 +1,9 @@
 # StackOverflow Prediction
 
 A python based web application, which takes the title and body of a question and produce prediction outputs such as answer time, tags, and experts.
+
 It is an end-to-end project from data collection, prediction model generation, and web app development.
+
 This project is a term project for EECS6414 Data Analytics and Visualization, Winter 2020, York University
 
 ## Team members: 
