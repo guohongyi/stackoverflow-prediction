@@ -1,6 +1,6 @@
 # StackOverflow Prediction
 
-This project is a term project for EECS6414 Data Analytics and Visualization, Winter 2020, York University
+A term project for EECS6414 Data Analytics and Visualization, Winter 2020, York University
 
 Team members: 
 
@@ -9,7 +9,7 @@ Team members:
 * Hongyi Guo
 
 This application takes the title and body of a question, and produce prediction outputs such as answer time, tags, and experts.
-it is an end-to-end project from data collection to putting models into production using flask, docker etc.
+It is an end-to-end project from data collection to putting models into production using flask, docker etc.
 
 ## Features:
 - Answer Time Prediction
