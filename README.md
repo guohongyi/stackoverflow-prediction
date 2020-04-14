@@ -1,7 +1,11 @@
 # STACKOVERFLOW
-Stackoverflow end to end projects from data collection to putting models into production using flask, docker etc.
+This project is a term project for EECS6414 Data Analytics and Visualization Winter 2020, York University
+Team members: 
+Jasmeet Kaur
+Xue Teng
+Hongyi Guo
 
-
+End to end projects from data collection to putting models into production using flask, docker etc.
 
 # 1. Predict Time
 # 2. Predictt Tags
@@ -16,7 +20,7 @@ Stackoverflow end to end projects from data collection to putting models into pr
 
 ## Installation
 
-Download files from dropbox 
+Extra prediction model files are required (shared on dropbox) because of Github size limit 
 
 `pip install scikit-learn pandas numpy flask tensorflow BeautifulSoup4 nltk`
 
