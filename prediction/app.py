@@ -34,7 +34,7 @@ time_model = tf.keras.models.load_model('model_Time.h5',custom_objects={'GlorotU
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-data_tag = pd.read_csv('dataTag.csv')
+
 token = ToktokTokenizer()
 lemma = WordNetLemmatizer()
 stop_words = set(stopwords.words("english"))
@@ -48,7 +48,6 @@ with open('tokenizer-time.pickle', 'rb') as handle:
     tokenizertime = pickle.load(handle)
 
 
-data_tag['tags'] = data_tag['tags'].apply(ast.literal_eval)
 
 
 
@@ -272,16 +271,11 @@ def predict():
     question = features[1]
     title = features[0]
 
-    # questions = [question].apply(lambda x: BeautifulSoup(x, "lxml").get_text())
+
 
     question = BeautifulSoup(question, "lxml").get_text()
 
 
-
-    # Remove stopwords, punctuation and lemmatize for text in body
-    # question = question.apply(lambda x: removeStopWords(x))
-    # question = question.apply(lambda x: removePunctuation(x))
-    # question = question.apply(lambda x: lemmatizeWords(x))
 
     question = removeStopWords(question)
     question = removePunctuation(question)
@@ -296,12 +290,14 @@ def predict():
 
     feature = [title + ' ' + question]
 
-    # final_features = [np.array(int_features)]
-    # feature = ["r convert igraph visnetwork r convert igraph visnetwork r convert igraph visnetwork i find way convert igraph visnetwork refer interactive arules arulesviz visnetwork suppose conversion igraph visnetwork result show convert visnetwork result different i try demonstrate issue use sample data data groceries library arules #pre-defined library library arules library arulesviz library visnetwork library igraph #get sample data amp get association rule data groceries rule visedges arrows visoptions highlightnearest t plot top 10 association rule via use visnetwork note for visnetwork diagram size intercept node indicate lift higher lift larger size intercept node unlike igraph diagram size intercept node indicate support colour intercept node indicate lift let compare igraph visnetwork by refer association rule table format rule no10 rule smallest lift suppose size intercept node smallest end smallest problems i try drill igdf"]
-    #feature = ["sdk version issue failed uploading build sdk version issue failed uploading build sdk version issue failed uploading build warning itms-90725 sdk version issue this app build ios 120 sdk starting march 2019 ios apps submit app store must build ios 121 sdk later include xcode 101 laterbut im use xcode 101 sdk version 101 show screen shoot sdk version description 1 deploymenttargey2 httpsistackimgurcomupqbcpng httpsistackimgurcombznqgpng"]
+
+
 
 
     tag_encoder = MultiLabelBinarizer()
+    tag_encoder.classes_ = np.load('tag_encoder.npy',allow_pickle=True,)
+
+
 
 
     bag_of_words_test = tokenizer.texts_to_matrix(feature)
@@ -312,16 +308,15 @@ def predict():
 
     prediction_time = time_model.predict(bag_of_words_test)
 
-    print(prediction_tag )
+    # print(prediction_tag )
 
 
 
     encoder = LabelEncoder()
-    data_time = pd.read_csv('dataTime.csv')
-    encoder.fit_transform(data_time['lbl'])
 
-    tag_encoder.fit_transform(data_tag['tags'])
-    #
+    encoder.classes_ = np.load('time_encoder.npy',allow_pickle=True,)
+
+
 
 
     output = prediction_tag[0].copy()
@@ -338,8 +333,8 @@ def predict():
 
     source_tag = tag_encoder.inverse_transform(np.asarray([output]))
 
-    print(source_time)
-    print(source_tag[0][0])
+    # print(source_time)
+    # print(source_tag[0][0])
 
     #########
     
@@ -347,9 +342,9 @@ def predict():
     predicted_tag = source_tag[0]
     #predicted_expert, predicted_id, unique_id = get_expert(predicted_tag)
     predicted_experts,expert_ids,unique_id = get_expert(predicted_tag, data_path)
-    print(predicted_experts)
-    print(predicted_tag)
-    print(get_tag_image(predicted_tag))
+    # print(predicted_experts)
+    # print(predicted_tag)
+    # print(get_tag_image(predicted_tag))
     if len(unique_id) == 0:
         predicted_expert, predicted_id, unique_id = get_expert(['python'])
     radar(unique_id) #---------------------------- generate radar plot
