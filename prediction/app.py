@@ -26,18 +26,23 @@ from math import pi
 import math
 import os
 
+import datetime
+
+
+
 app = Flask(__name__)
 tag_encoder = MultiLabelBinarizer()
 tag_model = tf.keras.models.load_model('model-tag-new.h5',custom_objects={'GlorotUniform': tf.keras.initializers.glorot_uniform()})
 time_model = tf.keras.models.load_model('model_Time.h5',custom_objects={'GlorotUniform': tf.keras.initializers.glorot_uniform()})
 
-nltk.download('stopwords')
-nltk.download('wordnet')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
+#
+#
 
-
-token = ToktokTokenizer()
-lemma = WordNetLemmatizer()
-stop_words = set(stopwords.words("english"))
+# token = ToktokTokenizer()
+# lemma = WordNetLemmatizer()
+# stop_words = set(stopwords.words("english"))
 
 
 # loading
@@ -112,14 +117,14 @@ def strip_list_noempty(mylist):
     newlist = (item.strip() if hasattr(item, 'strip') else item for item in mylist)
     return [item for item in newlist if item != '']
 
-def removeStopWords(text):
-    words = token.tokenize(text)
+def removeStopWords(words):
+    # words = token.tokenize(text)
     filtered = [w for w in words if not w in stop_words]
     return ' '.join(map(str, filtered))
 
-def removePunctuation(text):
+def removePunctuation(words):
     punct = '!"$%&\'()*,./:;<=>?@[\\]^_`{|}~'
-    words = token.tokenize(text)
+    # words = token.tokenize(text)
     punctuation_filtered = []
     regex = re.compile('[%s]' % re.escape(punct))
     remove_punctuation = str.maketrans(' ', ' ', punct)
@@ -130,8 +135,8 @@ def removePunctuation(text):
 
     return ' '.join(map(str, filtered_list))
 
-def lemmatizeWords(text):
-    words = token.tokenize(text)
+def lemmatizeWords(words):
+    # words = token.tokenize(text)
     listLemma = []
     for w in words:
         x = lemma.lemmatize(w, pos="v")
@@ -273,24 +278,25 @@ def predict():
 
 
 
+
+
     question = BeautifulSoup(question, "lxml").get_text()
 
-
-
-    question = removeStopWords(question)
-    question = removePunctuation(question)
-    question = lemmatizeWords(question)
-
-    # # Remove stopwords, punctuation and lemmatize for title. Also weight title 3 times
-    title = removeStopWords(title)
-    title = removePunctuation(title)
-    title = lemmatizeWords(title)
+    # words_q = token.tokenize(question)
+    # question = removeStopWords(words_q)
+    # question = removePunctuation(words_q)
+    # question = lemmatizeWords(words_q)
+    #
+    # # # Remove stopwords, punctuation and lemmatize for title. Also weight title 3 times
+    #
+    #
+    # title = removeStopWords(title)
+    # title = removePunctuation(title)
+    # title = lemmatizeWords(title)
     title =  title+' '+title+' '+title
 
 
     feature = [title + ' ' + question]
-
-
 
 
 
@@ -317,13 +323,12 @@ def predict():
     encoder.classes_ = np.load('time_encoder.npy',allow_pickle=True,)
 
 
-
-
     output = prediction_tag[0].copy()
     output[output >= 0.2] = 1
     output[output < 0.2] = 0
     
     show_pie(prediction_time) #----------------- generate pie chart
+
 
     y_classes = prediction_time.argmax(axis=-1)
 
@@ -337,6 +342,8 @@ def predict():
     # print(source_tag[0][0])
 
     #########
+
+
     
     data_path = './dataExpertID.csv'
     predicted_tag = source_tag[0]
@@ -352,7 +359,8 @@ def predict():
     
     
     output = prediction_time
-	
+
+
 
     return render_template('index.html', prediction_time=source_time[0], prediction_tag=toCsvString(source_tag[0]), prediction_experts=predicted_experts, prediction_ids=expert_ids, prediction=1)
 
