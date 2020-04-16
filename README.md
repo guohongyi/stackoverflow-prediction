@@ -32,7 +32,7 @@ This project is a term project for EECS6414 Data Analytics and Visualization, Wi
 
 ## Installation
 
-Extra prediction model files are required (shared on dropbox) because of Github size limit 
+Extra prediction model files are required (https://www.dropbox.com/s/9bkxi4oi4cxpc4v/model_Time.h5?dl=0) because of Github size limit. Place this file inside the "prediction" folder
 
 `pip install scikit-learn pandas numpy flask tensorflow BeautifulSoup4 nltk`
 
